@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+{%load static%}
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/x-icon">
+
+  <title>PLAY-IN BOX</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <div class="hero_bg_box">
+      <div class="img-box">
+        <img src="{% static 'back.jpeg' %}" height="100%" width="100%">
+      </div>
+    </div>
+
+    <header class="header_section">
+     
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                PLAY-IN BOX
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""></span>
+            </button>
+
+            <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'add_ground' user.id %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="guard.html"> # </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+<center>
+    <h2>
+        User Profile
+    </h2>
+    <img src="{{user.userProfile.url}}" style="width: 80px;height:80px;border-radius: 50%;margin-top: 50px;">
+    <table style="margin-top:50px">
+        <tr>
+            <td>First Name : {{user.first_name}}</td>
+            <td>Last Name : {{user.last_name}}</td>
+        </tr>
+        <tr>
+            <td>Email : {{user.email}}</td>
+            <td>DOB : {{user.first_name}}</td>
+        </tr>
+        
+        
+    </table>
+    <a href="#">Edit Profile</a>
+    </center>

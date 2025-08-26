@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donation and Request Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>ADD GROUND</h1>
+
+    
+    <!-- Food Donation Form -->
+    <section>
+       
+        <form action="" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <label for="box_name">Box Name:</label>
+            <input type="text" id="box_name" name="box_name" required><br><br>
+
+            <label for="location">Location:</label>
+            <textarea id="location" name="location" rows="4" cols="50" required></textarea><br><br>
+
+            <label for="timings">Timing:</label>
+            <input type="number" id="timings" name="timings" required><br><br>
+
+            <label for="image">Image:</label>
+            <input type="file" name="image" placeholder="choose image"  />
+
+
+            <button type="submit" value="submit">Submit</button>
+        </form>
+    </section>
+
+
+</body>
+</html>

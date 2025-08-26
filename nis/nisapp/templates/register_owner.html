@@ -1,0 +1,65 @@
+<style>
+    .signup-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the background image */
+body {
+    background-image: url('path/to/cricket_background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensures the background remains fixed while scrolling */
+    height: 100vh; /* Make sure the background covers the entire viewport height */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button[type="submit"] {
+    background-color: #008CBA; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+button[type="submit"]:hover {
+    background-color: #005A87; /* New background color on hover */
+}
+
+h2 {
+    text-align: center; /* Center-align the text */
+    font-size: 24px; /* Adjust the font size */
+    color: #333; /* Text color */
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+</style>
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+<div>
+    
+    <h2>SignUp form</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form | crispy}}
+        
+        <button type="submit"> Submit</button>
+    </form>
+
+</div>
+{% endblock %}

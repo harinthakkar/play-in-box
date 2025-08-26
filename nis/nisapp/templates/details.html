@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    
+    <link rel="stylesheet" href="./fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        body{
+            
+            background-color:gray;
+            background-size: 100%;
+            height: 900px;
+            width: 100vw;
+            background-position: center;
+           }
+        
+        
+
+        .box {
+        color: #000;
+        
+        font-weight: bolder;
+        box-sizing: border-box;
+        width: 575px;
+        height: 800px; 
+        padding: 20px;
+        background-color:#ffffff85;
+        position: relative;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%,-50%);
+        border-radius:  0 20px;
+        
+        }
+
+    .box button{
+        background: red;
+         color: white;
+         border: none;
+         font-size: 20px;
+        padding:0px;
+        border-radius: 20px 0px 20px 0px;  
+        }
+    .box button:hover{
+         background-color: white;
+        color: red;
+        border: 2px solid red ;
+        border-radius: 20px 0px 20px 0px;
+        }
+       
+    </style>
+      
+</head>
+<body>
+   
+    <div class="box" style="height:800px;">
+        <div style="height:35px;">
+        
+            <center>
+            <img src="{{details.image.url}}" height='400px' width='400px' style="border-radius:20px;">
+            </center>
+           <br><table style="font-size:20px">
+            
+                <p style="font-size:20px">Box Name : {{details.box_name}}</p>
+               <tr>
+                    <td>
+                        Location : {{details.location}} Years
+                    </td>
+                    <td>
+                        Timings : {{details.timings}}
+                    </td>
+                   
+                </tr>
+
+              
+                <tr>
+                    <td>
+                        General Information: 
+                    </td>
+                </tr>
+            </table>
+
+        
+    
+    
+   
+            
+           
+
+          
+            
+
+          <a href="{% url 'book_ground' user_id=request.user.id id=details.id %}"><button  class="btn btn-primary" style="margin-left: 40%;margin-top: 20%;">Book Now</button> </a>
+    
+</div>
+</div>
+</body>
+</html>
